@@ -1,0 +1,75 @@
+\documentclass{standalone}
+
+%maths
+\usepackage{tikz}
+\usepackage{scalerel}
+\usepackage{pict2e}
+\usepackage{tkz-euclide}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns,arrows.meta}
+\usetikzlibrary{shadows}
+\usetikzlibrary{external}
+
+%pgfplot
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{fillbetween}
+
+%colours
+\usepackage{xcolor}
+
+\usepackage{nicefrac}
+
+
+\begin{document}
+
+
+\pgfplotsset{
+		standard/.style={
+		axis line style = thick,
+		trig format = rad,
+		enlargelimits,
+		axis x line = middle,
+		axis y line = middle,
+		enlarge x limits = 0.15,
+		enlarge y limits = 0.15,
+		every axis x label/.style={at={(current axis.right of 						origin)},anchor=north west},
+		every axis y label/.style={at={(current axis.above of 						origin)},anchor=south east},
+		grid = both,
+		ticklabel style = {font=\tiny, fill = white}
+		
+   }
+}
+
+\begin{tikzpicture}
+\begin{axis}[standard,
+	xtick= {1,2,3,4},
+	ytick = {1,2,4,8,16},
+	xticklabels = {$1$,$2$,$3$,$4$},
+	yticklabels = {$1$,$2$,$4$,$8$,$16$},
+	xlabel = {Time $t$},
+	ylabel = {Size $y$},
+	samples = 1000,
+	xmin = -0.5, xmax = 5,
+	ymin = -1, ymax = 20]
+	
+	\node[anchor = center, label = south west:$0$] at (axis cs: 0,0){};
+	
+	\addplot[line width=0.4mm, red, domain = {0:5}]{2^x};
+	
+
+
+
+
+
+\end{axis}
+
+
+\end{tikzpicture}
+
+
+
+\end{document}
+

@@ -1,0 +1,34 @@
+\documentclass[borders=3.14mm]{standalone}
+\usepackage{forest}
+
+\begin{document}
+
+\begin{forest}
+  for tree={
+    grow=east,  % Tree grows horizontally
+    draw,       % Draw borders around nodes
+    circle,     % Use circular nodes
+    minimum size=1cm, % Minimum size of nodes
+    edge={-latex}, % Use arrows for edges
+    s sep=1cm   % Sibling separation
+  }
+  [Root
+    [A
+      [A1]
+      [A2
+        [A2a]
+        [A2b]
+      ]
+    ]
+    [B
+      [B1]
+      [B2]
+    ]
+    [C
+      [C1]
+      [C2]
+    ]
+  ]
+\end{forest}
+
+\end{document}
